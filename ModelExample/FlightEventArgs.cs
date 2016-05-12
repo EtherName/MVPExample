@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelExample
 {
-    public interface IAirPortModel
+    public class FlightEventArgs : EventArgs
     {
-        IEnumerable<Flight> Flights { get; }
-        void Delete(IEnumerable<Flight> flight);
-
+        public IEnumerable<Flight> Flights { get; set; }
     }
 }

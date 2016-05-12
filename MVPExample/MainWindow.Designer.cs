@@ -30,6 +30,7 @@
         {
             this.FlightsGridView = new System.Windows.Forms.DataGridView();
             this.PopulateButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FlightsGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,11 +52,22 @@
             this.PopulateButton.UseVisualStyleBackColor = true;
             this.PopulateButton.Click += new System.EventHandler(this.PopulateButtonClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(94, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 423);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PopulateButton);
             this.Controls.Add(this.FlightsGridView);
             this.Name = "MainWindow";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.DataGridView FlightsGridView;
         private System.Windows.Forms.Button PopulateButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

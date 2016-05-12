@@ -20,5 +20,15 @@ namespace ModelExample
                 new Flight {Arrival= true, City="Moscov", Number = 31 },
             };
         }
+
+        public void Delete(IEnumerable<Flight> flights)
+        {
+            for (int i = 0; i < flights.Count(); i++)
+            {
+                if (_flights.IndexOf(flights.ElementAt(i)) == 0)
+                _flights.Remove(flights.ElementAt(i));
+            }
+            
+        }
     }
 }

@@ -43,6 +43,7 @@
     <Compile Include="AirPortModel.cs" />
     <Compile Include="AirPortModelFactory.cs" />
     <Compile Include="Flight.cs" />
+    <Compile Include="FlightEventArgs.cs" />
     <Compile Include="IAirPortModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

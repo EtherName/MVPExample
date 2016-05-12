@@ -19,7 +19,13 @@ namespace MVPExample
             InitializeComponent();
         }
 
+        public event EventHandler<FlightEventArgs> DeleteFlightsEventRaised;
         public event EventHandler<EventArgs> PopulateFlightsEventRaised;
+
+        public void DeleteFlights(IEnumerable<Flight> flights)
+        {
+            throw new NotImplementedException();
+        }
 
         public void UpdateFlights(IEnumerable<Flight> flights)
         {
@@ -35,5 +41,9 @@ namespace MVPExample
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

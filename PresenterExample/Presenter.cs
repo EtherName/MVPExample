@@ -18,10 +18,16 @@ namespace PresenterExample
             _view = view;
             _airPortModel = AirPortModelFactory.CreateAirportModel();
             _view.PopulateFlightsEventRaised += PopulateFlightsEventHandler;
+            _view.DeleteFlightsEventRaised += DeleteFlightsEventHandler;
         }
         private void PopulateFlightsEventHandler(object sender, EventArgs e)
         {
             _view.UpdateFlights(_airPortModel.Flights);
+        }
+
+        private void DeleteFlightsEventHandler(object sender, FlightEventArgs e)
+        {
+            _view.DeleteFlights(e.Flights);
         }
     }
 }
