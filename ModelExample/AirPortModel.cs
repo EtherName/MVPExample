@@ -25,7 +25,7 @@ namespace ModelExample
         {
             for (int i = 0; i < flights.Count(); i++)
             {
-                if (_flights.IndexOf(flights.ElementAt(i)) == 0)
+                if (_flights.IndexOf(flights.ElementAt(i)) != 0)
                 _flights.Remove(flights.ElementAt(i));
             }
             

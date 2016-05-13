@@ -22,13 +22,22 @@ namespace MVPExample
         public event EventHandler<FlightEventArgs> DeleteFlightsEventRaised;
         public event EventHandler<EventArgs> PopulateFlightsEventRaised;
 
-        public void DeleteFlights(IEnumerable<Flight> flights)
+        FlightEventArgs _flightEA = new FlightEventArgs();
+
+        public IEnumerable<Flight> DeleteFlights()
         {
-            throw new NotImplementedException();
+            List<Flight> flights = new List<Flight>();
+            foreach (var row in FlightsGridView.SelectedRows)
+            {
+                var datarow = row as DataGridViewRow;
+                flights.Add((Flight)datarow.DataBoundItem);
+            }
+            return flights;
         }
 
         public void UpdateFlights(IEnumerable<Flight> flights)
         {
+            FlightsGridView.DataSource = null;
             FlightsGridView.DataSource = flights;
         }
 
@@ -41,8 +50,14 @@ namespace MVPExample
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DeleteButtonClick(object sender, EventArgs e)
         {
+            var handler = DeleteFlightsEventRaised;
+            _flightEA.Flights = DeleteFlights();
+            if (handler != null)
+            {
+                handler(this, _flightEA);
+            }
 
         }
     }
