@@ -30,5 +30,14 @@ namespace ModelExample
             }
             
         }
+
+        public void AddNewItem(IEnumerable<Flight> flights)
+        {
+            for (int i = 0; i < flights.Count(); i++)
+            {
+                if (_flights.IndexOf(flights.ElementAt(i)) == 0)
+                    _flights.Add(flights.ElementAt(i));
+            }
+        }
     }
 }

@@ -9,7 +9,8 @@ namespace ModelExample
     public interface IAirPortModel
     {
         IEnumerable<Flight> Flights { get; }
-        void Delete(IEnumerable<Flight> flight);
+        void Delete(IEnumerable<Flight> flights);
+        void AddNewItem(IEnumerable<Flight> flights);
 
     }
 }

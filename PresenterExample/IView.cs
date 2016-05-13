@@ -8,7 +8,9 @@ namespace PresenterExample
     {
         void UpdateFlights(IEnumerable<Flight> flights);
         IEnumerable<Flight> DeleteFlights();
+        IEnumerable<Flight> AddNewFlights();
         event EventHandler<EventArgs> PopulateFlightsEventRaised;
         event EventHandler<FlightEventArgs> DeleteFlightsEventRaised;
+        event EventHandler<FlightEventArgs> AddNewFlightsEventRaised;
     }
 }
