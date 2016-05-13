@@ -53,7 +53,7 @@ namespace MVPExample
         private void DeleteButtonClick(object sender, EventArgs e)
         {
             var handler = DeleteFlightsEventRaised;
-            _flightEA.Flights = DeleteFlights();
+            //_flightEA.Flights = DeleteFlights();
             if (handler != null)
             {
                 handler(this, _flightEA);
