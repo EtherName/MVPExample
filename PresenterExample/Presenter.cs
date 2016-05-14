@@ -27,7 +27,8 @@ namespace PresenterExample
 
         private void DeleteFlightsEventHandler(object sender, FlightEventArgs e)
         {
-            _airPortModel.Delete(_view.DeleteFlights());//e.Flights);
+            _airPortModel.Delete(e.Flights);
+            _view.UpdateFlights(_airPortModel.Flights);
         }
     }
 }

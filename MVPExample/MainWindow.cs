@@ -53,10 +53,16 @@ namespace MVPExample
         private void DeleteButtonClick(object sender, EventArgs e)
         {
             var handler = DeleteFlightsEventRaised;
+            List<Flight> flights = new List<Flight>();
+            foreach (var row in FlightsGridView.SelectedRows)
+            {
+                var datarow = row as DataGridViewRow;
+                flights.Add((Flight)datarow.DataBoundItem);
+            }
             //_flightEA.Flights = DeleteFlights();
             if (handler != null)
             {
-                handler(this, _flightEA);
+                handler(this, new FlightEventArgs() {  Flights= flights });
             }
 
         }
